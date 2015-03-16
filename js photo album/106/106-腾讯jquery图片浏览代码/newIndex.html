@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Examples</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link href="css/lrtk.css" rel="stylesheet">
+        <script type="text/javascript" src='js/jquery-1.9.1.min.js'></script>
+        <script type="text/javascript" src='js/photoslider.js'></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+                    function close_modal() {
+                    //hide the mask
+                    $('#mask').fadeOut(500);
+                    //hide modal window(s)
+                    $('.close_modal').fadeOut(500);
+                }
+                $('.close_modal').click(function () {
+                        //use the function to close it
+                        close_modal();
+                    });
+        </script>
+        <div id='mask' class="close_modal" style="position:absolute;top: 0px;left: 0px;height: 100%;width: 100%;background-color: black;display:'block' z-index:1">
+        </div>
+        <div style="height: 560px; padding-top: 150px" class="wrap picshow" style="z-index: 2;"><!--大图轮换区-->
+        <div id="picarea">
+            <div style="margin: 0px auto; width: 774px; height: 436px; overflow: hidden" id='bigpicarea'>
+                <p class='bigbtnPrev'><span id='big_play_prev'></span></p>
+                <div id="image_container" style="text-align: center;width=772;height=434" >
+                    <!--                     <img src="images/42813100.jpg" width=772 height=434>
+                                                            <img src="images/42813102.jpg" width=772 height=434>
+                    -->
+                </div>
+                <!--                 <img id="loading_image" src='images/loader.gif'>
+                -->
+                <p class='bigbtnNext'><span id='big_play_next'></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Album</title>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+<link href="css/mosaic.css" rel="stylesheet" type="text/css">
+<link href="css/tooltipster.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css"/>
+<link href="css/slideshow.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.cs01 {
+	background-image: url(images/cs.jpg);
+}
+.cs02 {
+	background-image: url(images/cs2.jpg);
+}
+</style>
+</head>
+<body>
+<div class="wrap clearfix">
+  <div class="content">
+    <div class="headerWrap">
+      <div class="custom-avatar"><img src="images/avatar.png" width="32" height="32" alt="avatar"></div>
+      <div class="custom-profile"><a href="#" class="first-top-links"><span>Max Chen</span></a><a href="#"
+                                                                                                class="spec"><span>Photo</span></a> </div>
+      <div class="custom-profile tools-right"><a href="#" class="first-top-links"><img src="images/icon-add.png"
+                                                                                     width="10" height="10">&nbsp;Add
+        Photos</a><a href="#">Add Video</a><a href="#" class="last-top-links"><span class="t-setting"><img
+            src="images/icon-setting.png" width="10" height="10"></span></a></div>
+    </div>
+    <div class="tab_content clearfix">
+      <ul class="tab_menu">
+        <li id="nav01">
+          <div class="nav-left nav-photos-of-you"></div>
+          <div class="nav-right"><span class="nav-count">6</span><span class="nav-subtitle">Photos of you</span></div>
+        </li>
+        <li id="nav02">
+          <div class="nav-left nav-photos"></div>
+          <div class="nav-right"><span class="nav-count">6</span><span class="nav-subtitle">Photos</span></div>
+        </li>
+        <li class="navactive" id="nav03">
+          <div class="nav-left nav-album"></div>
+          <div class="nav-right"><span class="nav-count">6</span><span class="nav-subtitle">Album</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="timeline_bg"></div>
+    <div class="album_of_me clearfix">
+      <ul id="list-album">
+        <li>
+          <div class="album-subset">
+            <div class="album-all cs01"><img src="images/album-mask.png" /></div>
+            <div class="album-all cs02"><img src="images/album-mask.png" /></div>
+          </div>
+          <div class="album-details"><a href="#">My web</a></div>
+          <div class="photo-privacy">3 photos</div>
+        </li>
+        <li>
+          <div class="album-subset">
+            <div class="album-all cs01"><img src="images/album-mask.png" /></div>
+            <div class="album-all cs02"><img src="images/album-mask.png" /></div>
+          </div>
+          <div class="album-details"><a href="#">My web</a></div>
+          <div class="photo-privacy">3 photos</div>
+        </li>
+        <li>
+          <div class="album-subset">
+            <div class="album-all cs01"><img src="images/album-mask.png" /></div>
+            <div class="album-all cs02"><img src="images/album-mask.png" /></div>
+          </div>
+          <div class="album-details"><a href="#">My web</a></div>
+          <div class="photo-privacy">3 photos</div>
+        </li>
+        <li>
+          <div class="album-subset">
+            <div class="album-all cs01"><img src="images/album-mask.png" /></div>
+            <div class="album-all cs02"><img src="images/album-mask.png" /></div>
+          </div>
+          <div class="album-details"><a href="#">My web</a></div>
+          <div class="photo-privacy">3 photos</div>
+        </li>
+        <li>
+          <div class="album-subset">
+            <div class="album-all cs01"><img src="images/album-mask.png" /></div>
+            <div class="album-all cs02"><img src="images/album-mask.png" /></div>
+          </div>
+          <div class="album-details"><a href="#">My web</a></div>
+          <div class="photo-privacy">3 photos</div>
+        </li>
+        <li>
+          <div class="album-subset">
+            <div class="album-all cs01"><img src="images/album-mask.png" /></div>
+            <div class="album-all cs02"><img src="images/album-mask.png" /></div>
+          </div>
+          <div class="album-details"><a href="#">My web</a></div>
+          <div class="photo-privacy">3 photos</div>
+        </li>
+        <li>
+          <div class="album-subset">
+            <div class="album-all cs01"><img src="images/album-mask.png" /></div>
+            <div class="album-all cs02"><img src="images/album-mask.png" /></div>
+          </div>
+          <div class="album-details"><a href="#">My web</a></div>
+          <div class="photo-privacy">3 photos</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.2.js"></script> 
+<script src="js/jquery.easing.1.3.js"></script> 
+<script src="js/mosaic.1.0.1.js"></script> 
+<script src="js/jquery.tooltipster.min.js"></script> 
+<script type="text/javascript" src="js/jquery.fancybox.js"></script> 
+<script type="text/javascript" src="js/jquery.fbmodel.js"></script> 
+<script type="text/javascript" src="js/jquery.aslideshow.js"></script> 
+<script type="text/javascript" src="js/jquery.dragsort.js"></script> 
+<script src="js/jquery.masonry.min.js"></script> 
+<script src="js/main.js"></script>
+<input name="list1SortOrder" type="hidden">
+<script type="text/javascript">
+$("#list-album").dragsort(
+{
+	dragSelector: "div",
+	dragBetween: false,
+	dragEnd: saveOrder,
+	placeHolderTemplate: "<li class='placeHolder'><div></div></li>"
+});
+
+function saveOrder()
+{
+	var data = $("#list-album li").map(function()
+	{
+		return $(this).children().html();
+	}).get();
+	$("input[name=list1SortOrder]").val(data.join("|"));
+};
+$(".album-all img").bind("click", function() {
+
+	window.open("photos_stream-inner.html ", "_self");
+
+})          
+</script> 
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jquery制作京东物流配送三级关联城市选择</title>
+    <link type="text/css" rel="stylesheet" href="jd.css" />
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src='group.js'></script>
+</head>
+
+<body>
+    <ul id="groupBySelector" style="width:620px;margin:40px auto 0 auto;">
+        <li id="summary-stock">
+            <div class="dt">分组依据：</div>
+            <div class="dd">
+                <div id="store-selector" onselectstart="return false" style="-moz-user-select: none;">
+                    <div class="text">
+                        <div ></div>
+                    </div>
+                    <div id='closeBtn' class='close'></div>
+                    <!-- <div onclick="$('#store-selector').removeClass('hover')" class="close">
+                    </div> -->
+                </div>
+
+                <!--store-selector end-->
+                <!--  <div id="store-prompt"><strong></strong>
+                </div> -->
+                <!--store-prompt end-->
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
